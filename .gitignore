@@ -1,0 +1,3 @@
+# Project exclude paths
+/many_datasource/target/
+/oracle-mybatis-puls/target/

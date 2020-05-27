@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sm.com.mapper.BmEntityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.sm.com.domain.BmEntity">
+        <id column="ENTITY_ID" property="entityId" />
+        <result column="ENTITY_NAME" property="entityName" />
+        <result column="ORGANIZATION_ID" property="organizationId" />
+        <result column="YEAR" property="year" />
+        <result column="MANAGER_NAME" property="managerName" />
+        <result column="MANAGER_ID" property="managerId" />
+        <result column="IS_ENABLE" property="isEnable" />
+        <result column="REMARKS" property="remarks" />
+        <result column="IS_PROJECT" property="isProject" />
+        <result column="PROJECT_ID" property="projectId" />
+        <result column="PROJECT_NAME" property="projectName" />
+        <result column="ORG_ID" property="orgId" />
+        <result column="ORG_NAME" property="orgName" />
+    </resultMap>
+
+</mapper>
