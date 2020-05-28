@@ -89,20 +89,10 @@ public class BmSubject extends Model<BmSubject> {
     private BigDecimal hierarchy;
 
 
-    //子节点
-    private List<BmSubject> children=new ArrayList<>();
-
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
 
-    public List<BmSubject> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<BmSubject> children) {
-        this.children = children;
-    }
 
     public BigDecimal getSubjectId() {
         return subjectId;

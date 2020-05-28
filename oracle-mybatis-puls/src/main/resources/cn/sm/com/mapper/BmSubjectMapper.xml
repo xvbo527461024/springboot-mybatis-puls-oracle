@@ -16,5 +16,14 @@
         <result column="REMARKS" property="remarks" />
         <result column="HIERARCHY" property="hierarchy" />
     </resultMap>
-
+    <!-- 查询指定id栏目 及 下面的所有子孙菜单 -->
+    <select id="selectByYear" resultMap="TreeResultMap" resultType="java.util.List">
+		select bms.subject_id,bms.subject_name, bms.parent_id from bm_subject bms where bms.year='2020'
+	</select>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="TreeResultMap" type="java.util.HashMap">
+        <id column="subject_id" property="subjectId" jdbcType="BIGINT" />
+        <result column="subject_name" property="subjectName" jdbcType="VARCHAR" />
+        <result column="parent_Id" property="parentId" jdbcType="VARCHAR" />
+    </resultMap>
 </mapper>

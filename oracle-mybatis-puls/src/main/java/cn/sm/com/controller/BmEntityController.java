@@ -19,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import sun.plugin2.message.Serializer;
 
 import javax.annotation.Resource;
+import javax.websocket.server.PathParam;
 import java.io.Serializable;
 import java.util.List;
 
@@ -87,6 +88,16 @@ public class BmEntityController extends BaseController<BmEntity> {
         try {
             redisUtil.set("xubo", "徐波");
             return  AjaxResult.me().setMessage("设置成功").setSucceed(true).setObject("xubo");
+        } catch (Exception e) {
+            return  AjaxResult.me().setMessage("设置失败").setSucceed(false).setObject(e.getMessage());
+
+        }
+    }
+    @RequestMapping(value = "/getKey/{key}",method = RequestMethod.POST)
+    public AjaxResult getKey(@PathVariable("key") String key){
+        try {
+            Object xubo = redisUtil.get(key);
+            return  AjaxResult.me().setMessage("获取成功").setSucceed(true).setObject(xubo);
         } catch (Exception e) {
             return  AjaxResult.me().setMessage("设置失败").setSucceed(false).setObject(e.getMessage());
 

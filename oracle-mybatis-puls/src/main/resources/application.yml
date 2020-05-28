@@ -30,6 +30,8 @@ spring:
     filters: stat,wall,log4j
     #通过connectProperties属性来打开mergeSql功能；慢SQL记录
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  profiles:
+    include: redis
 mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: cn.sm.com.domain #实体类别名
