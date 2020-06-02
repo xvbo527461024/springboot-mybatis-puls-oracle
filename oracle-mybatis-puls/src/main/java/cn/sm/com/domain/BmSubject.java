@@ -1,6 +1,8 @@
 package cn.sm.com.domain;
 
 import java.math.BigDecimal;
+
+import cn.sm.com.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -18,7 +20,7 @@ import java.util.List;
  * @since 2020-05-23
  */
 @TableName("BM_SUBJECT")
-public class BmSubject extends Model<BmSubject> {
+public class BmSubject extends BaseEntity<BmSubject> {
 
     private static final long serialVersionUID=1L;
 

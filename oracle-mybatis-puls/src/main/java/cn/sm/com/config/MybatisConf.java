@@ -1,12 +1,13 @@
 package cn.sm.com.config;
-
+import com.baomidou.mybatisplus.core.incrementer.IKeyGenerator;
+import com.baomidou.mybatisplus.core.injector.ISqlInjector;
+import com.baomidou.mybatisplus.extension.incrementer.OracleKeyGenerator;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 @Configuration
 @MapperScan("cn.sm.com.mapper*")
 @EnableTransactionManagement
@@ -27,5 +28,8 @@ public class MybatisConf {
         paginationInterceptor.setCountSqlParser(new JsqlParserCountOptimize(true));
         return paginationInterceptor;
     }
-
+    @Bean
+    public IKeyGenerator keyGenerator() {
+        return new OracleKeyGenerator();
+    }
 }

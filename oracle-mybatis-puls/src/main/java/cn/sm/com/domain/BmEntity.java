@@ -1,9 +1,10 @@
 package cn.sm.com.domain;
 import java.math.BigDecimal;
-import com.baomidou.mybatisplus.annotation.TableName;
+
+import cn.sm.com.base.BaseEntity;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableField;
+
 import java.io.Serializable;
 
 /**
@@ -15,14 +16,14 @@ import java.io.Serializable;
  * @since 2020-05-23
  */
 @TableName("BM_ENTITY")
-public class BmEntity extends Model<BmEntity> {
+public class BmEntity extends BaseEntity<BmEntity>  {
 
     private static final long serialVersionUID=1L;
 
     /**
      * 预算实体ID
      */
-    @TableId("ENTITY_ID")
+    @TableId(value = "ENTITY_ID",type = IdType.INPUT)
     private Long entityId;
 
     /**
@@ -59,6 +60,7 @@ public class BmEntity extends Model<BmEntity> {
      * 是否可用
      */
     @TableField("IS_ENABLE")
+    @TableLogic//逻辑删除字段(可配置全局字段)
     private String isEnable;
 
     /**
