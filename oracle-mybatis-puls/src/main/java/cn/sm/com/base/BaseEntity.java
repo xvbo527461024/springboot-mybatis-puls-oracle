@@ -5,5 +5,5 @@ import com.baomidou.mybatisplus.annotation.KeySequence;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
 @KeySequence("seq_id")
-public class BaseEntity<T> extends Model {
+public abstract class BaseEntity<T> extends Model {
 }
